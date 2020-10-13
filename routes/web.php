@@ -14,9 +14,9 @@ use Illuminate\Auth\Middleware\Authenticate ;
 |
 */
 
-// Route::any('/{s?}', function () {
-//     return view('Be.Auth.login');
-// });
+Route::any('/', function () {
+    return view('Be.Auth.login');
+});
 Route::get('/login',"UserController@Login");
 Route::post('/login',"UserController@Login_Post");
 Route::group(['prefix' => '/Backend','middleware'=>'auth'], function () {

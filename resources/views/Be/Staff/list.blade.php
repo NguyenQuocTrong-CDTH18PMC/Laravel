@@ -8,7 +8,7 @@
 @section('content')
 <div class="row">
     <div class="col-sm-12">
-        @include('element.card_header')
+        @include('Be.Staff.element.card_header')
          <div class="card-body">
             <table id="example2" class="table table-bordered table-hover dataTable dtr-inline" role="grid" aria-describedby="example2_info">
                  <thead>
