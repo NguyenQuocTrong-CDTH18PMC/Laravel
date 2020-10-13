@@ -28,8 +28,13 @@ class UserController extends Controller
             return redirect('/login')->with('notice', 'Tài khoản đăng nhập không thành công');
         }
     }
-    public function List()
+  public function List()
     {
-
+        $User=User::get();
+        // echo "<pre>";
+        // var_dump($User);
+        // echo "</pre>";
+        // exit;
+        return  view('Be.Staff.list',compact('User'));
     }
 }

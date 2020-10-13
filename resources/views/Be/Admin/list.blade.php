@@ -7,12 +7,13 @@
 
 @section('content')
 <div class="form-row">
-    <div class="form- col-md-8">
+    <div class="form-group col-md-4">
         <input id="my-input" class="form-control" type="text" name="search" placeholder="Tìm kiếm">
     </div>
-
-    <div class="form- col-md-2">
+    <div class="form-group col-md-2">
         <a href="" class="btn btn-primary">Thêm</a>
+    </div>
+    <div class="form-group col-md-6">
 
     </div>
 </div>
