@@ -26,6 +26,11 @@ class ApiLoaiDiaDiemController extends Controller
     public function store(Request $request)
     {
         //
+        $loaidiadiem=new LoaiDiaDiem();
+        $loaidiadiem->name=$request->name;
+        $loaidiadiem->status=1;
+        $flag=$loaidiadiem->save();
+        return response()->json($flag);
     }
 
     /**
@@ -37,6 +42,7 @@ class ApiLoaiDiaDiemController extends Controller
     public function show($id)
     {
         //
+        return response()->json(LoaiDiaDiem::find($id));
     }
 
     /**
@@ -49,6 +55,11 @@ class ApiLoaiDiaDiemController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $diadiem=LoaiDiaDiem::find($id);
+        $loaidiadiem->name=$request->name;
+        $loaidiadiem->status=1;
+        $flag=$loaidiadiem->save();
+        return response()->json($flag);
     }
 
     /**
@@ -60,5 +71,9 @@ class ApiLoaiDiaDiemController extends Controller
     public function destroy($id)
     {
         //
+        $loaidiadiem=LoaiDiaDiem::find($id);
+        $loaidiadiem->status=0;
+        $flag=$diadiem->save();
+        return response()->json($flag);
     }
 }
