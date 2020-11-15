@@ -14,7 +14,13 @@ class CreateDiaDiemsTable extends Migration
     public function up()
     {
         Schema::create('dia_diems', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->string('name');
+            $table->string('toadoX');
+            $table->string('toadoY');
+            $table->unsignedInteger('loai_id');
+            $table->tinyInteger('status')->default(1);
+            $table->foreign('loai_id')->references('id')->on('loai_dia_diems');
             $table->timestamps();
         });
     }

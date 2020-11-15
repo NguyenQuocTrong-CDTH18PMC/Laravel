@@ -14,7 +14,11 @@ class CreateNhomPhuotsTable extends Migration
     public function up()
     {
         Schema::create('nhom_phuots', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->string('name');
+            $table->text('message');
+            $table->dateTime('ngaydi');
+            $table->tinyInteger('status')->default(1);
             $table->timestamps();
         });
     }
