@@ -20,7 +20,7 @@ class CreateDiaDiemsTable extends Migration
             $table->string('toadoY');
             $table->unsignedInteger('loai_id');
             $table->tinyInteger('status')->default(1);
-            $table->foreign('loai_id')->references('id')->on('loai_dia_diems');
+            // $table->foreign('loai_id')->references('id')->on('loai_dia_diems');
             $table->timestamps();
         });
     }
