@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\NhomPhuot;
+use Validator;
+
 class ApiNhomPhuotController extends Controller
 {
     /**
@@ -36,14 +38,52 @@ class ApiNhomPhuotController extends Controller
      */
     public function store(Request $request)
     {
+        //create rules
+        $rules = [
+            'name' => 'required|min:3',
+            'message' => 'required',
+            'ngaydi' => 'required|after:tomorrow',
+            'image' => 'required|image',
+            'status' => 'required|numeric'
+        ];
+
+        
+        //check validator
+        $validator = Validator::make($request->all(), $rules);
+        if($validator->fails()){
+            //400 bad request
+            return response()->json($validator->errors(), 400);
+        }
+        //success
         $nhom_phuot = new NhomPhuot();
         $nhom_phuot->name = $request->name;
         $nhom_phuot->message = $request->message;
+        //lay image
+        $get_image = $request->file('image');
+        if($get_image) {
+    		$get_name_image = $get_image->getClientOriginalName();
+    		$name_image = current(explode('.', $get_name_image));
+    		$new_image = $name_image.rand(0,99).'.'.$get_image->getClientOriginalExtension();
+            $get_image->move(public_path("uploads/"), $new_image);
+            $nhom_phuot->image = $new_image;
+            
+
+            //get url
+            $imageUrl = url('api/NhomPhuot/uploads/'.$new_image);
+    	} 
+
+
+
+
         $nhom_phuot->ngaydi = $request->ngaydi;
-       
-        $nhom_phuot->status= $request->status;
+        $nhom_phuot->status= $request->status;  
         $nhom_phuot->save();
-        return response()->json($nhom_phuot, 200);
+
+
+        return response()->json([
+            'data' => $nhom_phuot,
+            'imageUrl' => $imageUrl
+        ], 200);
     }
 
     /**
@@ -56,7 +96,7 @@ class ApiNhomPhuotController extends Controller
     {
         $data = NhomPhuot::find($id);
         if(is_null($data)) {
-            return response()->json('Not found!',404); 
+            return response()->json(["message" => "Not found!"],404); 
         }
         return response()->json($data,200);
     }
@@ -81,12 +121,10 @@ class ApiNhomPhuotController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
-        
         //method PUT
         $nhom_phuot = NhomPhuot::find($id);
         if(is_null($nhom_phuot)) {
-            return response()->json('Not found!',404); 
+            return response()->json(["message" => "Not found!"],404); 
         }
         $nhom_phuot->name = $request->name;
         $nhom_phuot->message = $request->message;
@@ -106,7 +144,7 @@ class ApiNhomPhuotController extends Controller
     {
         $nhom_phuot = NhomPhuot::find($id);
         if(is_null($nhom_phuot)) {
-            return response()->json('Not found!',404); 
+            return response()->json(["message" => "Not found!"],404); 
         }
         $nhom_phuot->status = -1;
         $nhom_phuot->save(); 

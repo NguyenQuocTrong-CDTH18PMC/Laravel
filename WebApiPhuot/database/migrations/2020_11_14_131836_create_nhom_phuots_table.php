@@ -17,6 +17,7 @@ class CreateNhomPhuotsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->text('message');
+            $table->string('image')->nullable();
             $table->dateTime('ngaydi');
             $table->tinyInteger('status')->default(1);
             $table->timestamps();

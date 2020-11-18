@@ -21,3 +21,9 @@ Route::apiResource("DiaDiem","ApiDiaDiemController");
 
 
 Route::apiResource("NhomPhuot","ApiNhomPhuotController");
+
+//Hàm lấy hình ảnh
+Route::group(['prefix' => 'NhomPhuot'], function () {
+    Route::get('uploads/{imageUrl}', 'FileController@getImage');
+});
+
