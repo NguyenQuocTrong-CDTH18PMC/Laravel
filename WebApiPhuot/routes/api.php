@@ -18,6 +18,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::apiResource("DiaDiem","ApiDiaDiemController");
-
-
+Route::apiResource("User","ApiUserController");
+Route::apiResource("ThanhVienNhom","ApiThanhVienNhomController");
 Route::apiResource("NhomPhuot","ApiNhomPhuotController");
