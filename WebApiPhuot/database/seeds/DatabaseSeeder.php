@@ -10,10 +10,16 @@ class DatabaseSeeder extends Seeder
      *
      * @return void
      */
+    //run php artisan db:seed
     public function run()
     {
-          $this->call(UserSeeder::class);
-         $this->call(DiaDiemSeeder::class);
-        $this->call(ThanhVienNhomSeeder::class);
+        // $this->call(UserSeeder::class);
+        $this->call([
+            DiaDiemSeeder::class,
+            NhomPhuotSeeder::class,
+            UserSeeder::class,
+            ThanhVienNhomSeeder::class
+        ]);
+
     }
 }
