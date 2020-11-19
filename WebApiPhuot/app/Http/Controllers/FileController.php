@@ -8,8 +8,14 @@ class FileController extends Controller
 {
     public function getImage($imageUrl) {
         //get image
-        return response()->download(public_path('uploads/'.$imageUrl), $imageUrl);
+        if(file_exists(public_path('uploads/'.$imageUrl))){
+            return response()->download(public_path('uploads/'.$imageUrl), $imageUrl);
+        }
+        return response()->json(["message" => "Not found file!"],404); 
+        
     }
+
+    
 
     
 }

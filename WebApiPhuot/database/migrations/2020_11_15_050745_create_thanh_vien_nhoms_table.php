@@ -17,7 +17,7 @@ class CreateThanhVienNhomsTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('nhom_id');
             $table->unsignedInteger('user_id');
-            $table->foreign('nhom_id')->references('id')->on('nhom_phuots')->onDelete('cascade');;
+            $table->foreign('nhom_id')->references('id')->on('nhom_phuots')->onDelete('cascade');
             $table->foreign('user_id')->references('id')->on('users');
             $table->tinyInteger('status')->default(1);
             $table->timestamps();

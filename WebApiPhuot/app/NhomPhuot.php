@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+use App\LoTrinh;
 class NhomPhuot extends Model
 {
     public $timestamps = false;
@@ -14,4 +14,8 @@ class NhomPhuot extends Model
         'message',
         'image',
     ];
+
+    public function LoTrinhs() {
+        return $this->hasMany('App\LoTrinh', 'nhom_id', 'id');
+    }
 }
