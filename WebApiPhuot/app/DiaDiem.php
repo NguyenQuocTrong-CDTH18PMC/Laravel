@@ -12,4 +12,8 @@ class DiaDiem extends Model
     protected $fileable=[
         "name","toadoX","toadoY","loai_id","status"
     ];
+
+    public function LoTrinhs() {
+        return $this->hasMany('App\LoTrinh', 'diadiem_id', 'id');
+    }
 }

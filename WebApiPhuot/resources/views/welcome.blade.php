@@ -64,6 +64,24 @@
         </style>
     </head>
     <body>
+        <div class="container">
+            <table class="w3-table w3-bordered">
+                <tr>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Message</th>
+                  <th>Image</th>
+                  <th>Ngaydi</th>
+                  <th>trang thai</th>
+                </tr>
+                <tr>
+                  <td>Jill</td>
+                  <td>Smith</td>
+                  <td>50</td>
+                </tr>
+                
+              </table>
+        </div>   
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
@@ -96,5 +114,10 @@
                 </div>
             </div>
         </div>
+
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.9/angular.min.js" />
     </body>
+
+
+    
 </html>

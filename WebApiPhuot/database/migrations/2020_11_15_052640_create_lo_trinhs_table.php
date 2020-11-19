@@ -15,9 +15,9 @@ class CreateLoTrinhsTable extends Migration
     {
         Schema::create('lo_trinhs', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('nhom_id');
+            $table->unsignedInteger('nhom_id');
             $table->unsignedInteger('diadiem_id');
-           //$table->foreign('nhom_id')->references('id')->on('nhom_phuots')->onDelete('cascade');
+            $table->foreign('nhom_id')->references('id')->on('nhom_phuots')->onDelete('cascade');
             $table->foreign('diadiem_id')->references('id')->on('dia_diems');
             $table->tinyInteger('status')->default(1);
             $table->timestamps();
