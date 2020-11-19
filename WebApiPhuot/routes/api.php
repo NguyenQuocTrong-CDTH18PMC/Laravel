@@ -32,4 +32,5 @@ Route::group(['prefix' => 'NhomPhuot'], function () {
 Route::apiResource("User","ApiUserController");
 Route::apiResource("ThanhVienNhom","ApiThanhVienNhomController");
 Route::apiResource("NhomPhuot","ApiNhomPhuotController");
+Route::apiResource("LoTrinh","ApiLoTrinhController");
 

@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
+
 class UserSeeder extends Seeder
 {
     /**
@@ -19,7 +20,6 @@ class UserSeeder extends Seeder
             ["name"=>"Chấn Huy","image"=>"chan-huy.jpg","email"=>"chanhuyi@gmail.com","phone"=>"0975318642","fullname"=>"Lương Cao Chấn Huy","status"=>1,"password"=>bcrypt("ChanHuy")],
             ["name"=>"Đình Đức","image"=>"dinh-duc.jpg","email"=>"dinhduc@gmail.com","phone"=>"0864297531","fullname"=>"Bùi Đình Đức","status"=>1,"password"=>bcrypt("DinhDuc")],
         ]
-
         );
     }
 }

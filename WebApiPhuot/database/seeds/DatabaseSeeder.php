@@ -11,6 +11,7 @@ class DatabaseSeeder extends Seeder
      * @return void
      */
     //run php artisan db:seed
+    //composer dump-autoload: đồng bộ seeder
     public function run()
     {
         // $this->call(UserSeeder::class);
