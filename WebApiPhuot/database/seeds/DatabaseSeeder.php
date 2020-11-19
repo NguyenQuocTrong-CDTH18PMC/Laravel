@@ -15,12 +15,11 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UserSeeder::class);
-        $this->call([
-            DiaDiemSeeder::class,
-            NhomPhuotSeeder::class,
-            UserSeeder::class,
-            ThanhVienNhomSeeder::class
-        ]);
+
+        $this->call(DiaDiemSeeder::class);
+        $this->call(LoaiBaiVietSeeder::class);
+        $this->call(BaiVietSeeder::class);
+
 
     }
 }
