@@ -16,6 +16,9 @@ class ApiBaiVietController extends Controller
     public function index()
     {
         //
+        //Them ten loai bai viet
+        //Them dia diem
+        //Summary
       return response()->json(BaiViet::all());
    
     }

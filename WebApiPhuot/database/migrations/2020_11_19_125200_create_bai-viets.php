@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Baiviets extends Migration
+class CreateBaiViets extends Migration
 {
     /**
      * Run the migrations.
@@ -14,16 +14,24 @@ class Baiviets extends Migration
     public function up()
     {
         //
-        Schema::create('baiviets', function (Blueprint $table) {
+        Schema::create('bai_viets', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
             $table->string('content');
             $table->datetime('date');
-            $table->integer('user_id')->references('id')->on('users');
+
+            $table->unsignedInteger('diadiem_id');
+            $table->foreign('diadiem_id')->references('id')->on('dia_diems');
+
+            $table->unsignedInteger('loaibaiviet_id');
+            $table->foreign('loaibaiviet_id')->references('id')->on('loai_bai_viets');
+
+            $table->unsignedInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+            
             $table->tinyInteger('status')->default(1);
             $table->timestamps();
         });
-
     }
 
     /**
@@ -34,6 +42,6 @@ class Baiviets extends Migration
     public function down()
     {
         //
-        Schema::dropIfExists('baiviets');
+        Schema::dropIfExists('bai_viets');
     }
 }

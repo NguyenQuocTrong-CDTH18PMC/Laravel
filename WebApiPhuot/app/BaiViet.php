@@ -10,7 +10,7 @@ class BaiViet extends Model
     protected $primaryKey="id";
     protected $table="baiviets";
     protected $fileable=[
-        "title","content","date","user_id","status"
+        "title","content","date","diadiem_id","loaibaiviet_id","user_id","status"
     ];
 
     public function user()
