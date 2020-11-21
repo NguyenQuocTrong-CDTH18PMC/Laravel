@@ -78,6 +78,9 @@
                   <td>Jill</td>
                   <td>Smith</td>
                   <td>50</td>
+                  <td>50</td>
+                  <td>50</td>
+                  <td>50</td>
                 </tr>
                 
               </table>
@@ -115,7 +118,8 @@
             </div>
         </div>
 
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.9/angular.min.js" />
+        
+        
     </body>
 
 
