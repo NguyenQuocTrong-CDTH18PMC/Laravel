@@ -16,4 +16,8 @@ class DiaDiem extends Model
     public function LoTrinhs() {
         return $this->hasMany('App\LoTrinh', 'diadiem_id', 'id');
     }
+
+    public function BaiViets(){
+        return $this->hasMany('App\BaiViet', 'diadiem_id', 'id');
+    }
 }
