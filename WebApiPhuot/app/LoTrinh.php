@@ -20,6 +20,6 @@ class LoTrinh extends Model
         return $this->belongsTo('App\NhomPhuot', 'nhom_id', 'id');
     }
     public function diadiem() {
-        return $this->belongsTo('App\NhomPhuot', 'diadiem_id', 'id');
+        return $this->belongsTo('App\DiaDiem', 'diadiem_id', 'id');
     }
 }
