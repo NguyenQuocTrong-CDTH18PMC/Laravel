@@ -16,11 +16,18 @@ class DatabaseSeeder extends Seeder
     {
         // $this->call(UserSeeder::class);
         $this->call([
-            DiaDiemSeeder::class,
-            NhomPhuotSeeder::class,
             UserSeeder::class,
-            ThanhVienNhomSeeder::class
-        ]);
+            DiaDiemSeeder::class,
+            LoaiBaiVietSeeder::class,
+            BaiVietSeeder::class,
+            NhomPhuotSeeder::class,
+            ThanhVienNhomSeeder::class,
+            
+            ]);
+        // $this->call(DiaDiemSeeder::class);
+        // $this->call(LoaiBaiVietSeeder::class);
+        // $this->call(BaiVietSeeder::class);
+
 
     }
 }
