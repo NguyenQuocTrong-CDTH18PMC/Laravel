@@ -19,7 +19,17 @@ class ApiBaiVietController extends Controller
         //Them ten loai bai viet
         //Them dia diem
         //Summary
-      return response()->json(BaiViet::all());
+        $data = BaiViet::where('status', '<>', '-1')->orderBy('id', 'DESC')->get();
+        
+        
+        
+        if($data->count() > 0) {
+            return response()->json([
+                'data' => $data,
+                'message' => 'Hiển thị thành công'
+            ], 200);
+        }
+        return response()->json(['message' => 'Không tìm thấy dữ liệu']);
    
     }
 
