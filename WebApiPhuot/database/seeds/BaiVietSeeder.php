@@ -13,10 +13,10 @@ class BaiVietSeeder extends Seeder
     {
         //
         DB::table('bai_viets')->insert([
-            ["title"=>"My friend","content"=>"How to get friend","diadiem_id"=>"1","loaibaiviet_id"=>"1","date"=>"2020-02-02","user_id"=>1,"status"=>1],
-            ["title"=>"My friend","content"=>"How to get friend","diadiem_id"=>"1","loaibaiviet_id"=>"1","date"=>"2020-02-02","user_id"=>1,"status"=>1],
-            ["title"=>"My friend","content"=>"How to get friend","diadiem_id"=>"1","loaibaiviet_id"=>"1","date"=>"2020-02-02","user_id"=>1,"status"=>1],
-            ["title"=>"My friend","content"=>"How to get friend","diadiem_id"=>"1","loaibaiviet_id"=>"1","date"=>"2020-02-02","user_id"=>1,"status"=>1]
+            ["title"=>"My friend","content"=>"How to get friend","image"=>"no image","diadiem_id"=>"1","loaibaiviet_id"=>"1","date"=>"2020-02-02","user_id"=>1,"status"=>1],
+            ["title"=>"My friend","content"=>"How to get friend","image"=>"no image","diadiem_id"=>"1","loaibaiviet_id"=>"1","date"=>"2020-02-02","user_id"=>1,"status"=>1],
+            ["title"=>"My friend","content"=>"How to get friend","image"=>"no image","diadiem_id"=>"1","loaibaiviet_id"=>"1","date"=>"2020-02-02","user_id"=>1,"status"=>1],
+            ["title"=>"My friend","content"=>"How to get friend","image"=>"no image","diadiem_id"=>"1","loaibaiviet_id"=>"1","date"=>"2020-02-02","user_id"=>1,"status"=>1],
         ]
         );
     }
