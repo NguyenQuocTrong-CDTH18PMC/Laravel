@@ -14,7 +14,17 @@ class ApiDiaDiemController extends Controller
     public function index()
     {
         //
-        return response()->json(DiaDiem::all());
+        $data = DiaDiem::where('status', '<>', '-1')->orderBy('id', 'DESC')->get();
+        
+         return response()->json($data);
+        
+        // if($data->count() > 0) {
+        //     return response()->json([
+        //         'data' => $data,
+        //         'message' => 'Hiển thị thành công'
+        //     ], 200);
+        // }
+        // return response()->json(['message' => 'Không tìm thấy dữ liệu']);
     }
 
     /**
