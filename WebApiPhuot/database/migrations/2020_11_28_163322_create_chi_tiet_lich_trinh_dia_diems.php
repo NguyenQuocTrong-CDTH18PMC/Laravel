@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLoTrinhsTable extends Migration
+class CreateChiTietLichTrinhDiadiems extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,19 @@ class CreateLoTrinhsTable extends Migration
      */
     public function up()
     {
-        Schema::create('lo_trinhs', function (Blueprint $table) {
-            $table->increments('id');
-            $table->unsignedInteger('nhom_id');
-            $table->unsignedInteger('diadiem_id');  
-            $table->foreign('nhom_id')->references('id')->on('nhom_phuots')->onDelete('cascade');
+        Schema::create('chi_tiet_lich_trinh_dia_diems', function (Blueprint $table) {
+            $table->id();
+
+            $table->unsignedInteger('diadiem_id');
             $table->foreign('diadiem_id')->references('id')->on('dia_diems');
+
+            $table->unsignedInteger('lotrinh_id');
+            $table->foreign('lotrinh_id')->references('id')->on('lo_trinhs');
+
             $table->tinyInteger('status')->default(1);
+
             $table->timestamps();
+            
         });
     }
 
@@ -31,6 +36,6 @@ class CreateLoTrinhsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('lo_trinhs');
+        Schema::dropIfExists('chi_tiet_lich_trinh_dia_diems');
     }
 }

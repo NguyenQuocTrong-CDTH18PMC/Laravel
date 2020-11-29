@@ -24,7 +24,10 @@ class DatabaseSeeder extends Seeder
            
             NhomPhuotSeeder::class,
             ThanhVienNhomSeeder::class,
-            
+            LoTrinhSeeder::class,
+            ChiTietLichTrinhDiaDiemSeeder::class,
+            ChiTietLichTrinhNhomSeeder::class,
+            ChiTietNhomSeeder::class
             ]);
         // $this->call(DiaDiemSeeder::class);
         // $this->call(LoaiBaiVietSeeder::class);

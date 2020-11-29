@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\ChiTietLichTrinhDiaDiem;
 
 class DiaDiem extends Model
 {
@@ -13,10 +14,10 @@ class DiaDiem extends Model
         "name","toadoX","toadoY","loai_id","status"
     ];
 
-    public function LoTrinhs() {
-        return $this->hasMany('App\LoTrinh', 'diadiem_id', 'id');
+    public function ChiTietLichTrinhDiaDiem() {
+        return $this->hasMany('App\ChiTietLichTrinh', 'chitiet_id', 'id');
     }
-
+  
     public function BaiViets(){
         return $this->hasMany('App\BaiViet', 'diadiem_id', 'id');
     }

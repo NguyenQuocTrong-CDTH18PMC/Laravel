@@ -20,6 +20,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::apiResource("DiaDiem","ApiDiaDiemController");
 
 Route::apiResource("BaiViet","ApiBaiVietController");
+Route::apiResource("BaiViet","ApiBaiVietController");
+Route::apiResource("ChiTietLichTrinhDiaDiem","ApiChiTietLichTrinhDiaDiem");
+Route::apiResource("ChiTietLichTrinhNhom","ApiChiTietLichTrinhNhom");
+Route::apiResource("ChiTietNhom","ApiChiTietNhom");
 
 
 

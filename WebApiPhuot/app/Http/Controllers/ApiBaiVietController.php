@@ -48,6 +48,17 @@ class ApiBaiVietController extends Controller
     public function store(Request $request)
     {
         //
+        $baiviet=new DiaDiem();
+        $baiviet->title=$request->title;
+        $baiviet->content=$request->content;
+        $baiviet->image=$request->image;
+        $baiviet->date=$request->date;
+        $baiviet->diadiem_id=$request->diadiem_id;
+        $baiviet->loaibaiviet_id=$request->loaibaiviet_id;
+        $baiviet->user_id=$request->user_id;
+        $baiviet->status=1;
+        $flag=$baiviet->save();
+        return response()->json($flag);
     }
 
     /**
@@ -59,6 +70,7 @@ class ApiBaiVietController extends Controller
     public function show($id)
     {
         //
+        return response()->json(BaiViet::find($id));
     }
 
     /**
@@ -71,6 +83,17 @@ class ApiBaiVietController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $baiviet=BaiViet::find($id);
+        $baiviet->title=$request->title;
+        $baiviet->content=$request->content;
+        $baiviet->image=$request->image;
+        $baiviet->date=$request->date;
+        $baiviet->diadiem_id=$request->diadiem_id;
+        $baiviet->loaibaiviet_id=$request->loaibaiviet_id;
+        $baiviet->user_id=$request->user_id;
+        $baiviet->status=1;
+        $flag=$baiviet->save();
+        return response()->json($flag);
     }
 
     /**
@@ -82,5 +105,9 @@ class ApiBaiVietController extends Controller
     public function destroy($id)
     {
         //
+        $baiviet=BaiViet::find($id);
+        $baiviet->status=0;
+        $flag=$baiviet->save();
+        return response()->json($flag);
     }
 }
