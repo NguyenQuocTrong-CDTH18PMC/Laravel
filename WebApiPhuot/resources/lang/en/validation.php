@@ -130,9 +130,25 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'name' => [
+            'required' => 'Vui lòng điền giá trị tên nhóm phượt vào ô',
+            'min' => 'Giá trị :attribute phải tối thiểu :min kí tự.'
         ],
+        'message' => [
+            'required' => 'Vui lòng điền giá trị tin nhắn vào ô'
+        ],
+        'ngaydi' => [
+            'required' => 'Vui lòng điền giá trị ngày đi vào ô',
+            'after' => 'Giá trị :attribute phải sau :date.'
+        ],
+        'image' => [
+            'required' => 'Vui lòng điền giá trị hình ảnh vào ô',
+            'image' => 'Giá trị :attribute phải là hình ảnh'
+        ],
+        'status' => [
+            'required' => 'Vui lòng chọn giá trị trạng thái'
+        ]
+        
     ],
 
     /*

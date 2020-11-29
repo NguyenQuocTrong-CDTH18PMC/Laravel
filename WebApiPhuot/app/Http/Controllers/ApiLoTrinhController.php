@@ -14,7 +14,15 @@ class ApiLoTrinhController extends Controller
      */
     public function index()
     {
+
         return response()->json(LoTrinh::all());
+
+        $data = LoTrinh::with('nhomphuot', 'diadiem')->orderBy('id', 'DESC')->get();
+        
+        return response()->json([
+            'data' => $data
+        ], 200);
+
     }
 
     /**
@@ -46,8 +54,18 @@ class ApiLoTrinhController extends Controller
      */
     public function show($id)
     {
+
         $data = LoTrinh::find($id);
         return response()->json($data);
+        $data = LoTrinh::with('nhomphuot', 'diadiem')->find($id);
+        
+        if(is_null($data)) {
+            return response()->json(["message" => "Not found!"],404); 
+        }
+        return response()->json([
+            'data' => $data
+        ], 200);
+
     }
 
     /**
